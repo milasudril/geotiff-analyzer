@@ -1,0 +1,4 @@
+{
+	"target":{"name":"skip_bytes"},
+	"dependencies":[{"ref":"./skip_bytes.o", "rel":"implementation"}]
+}

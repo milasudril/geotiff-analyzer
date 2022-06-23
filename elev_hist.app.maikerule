@@ -1,0 +1,4 @@
+{
+	"target":{"name":"peak_valley_elev"},
+	"dependencies":[{"ref":"./peak_valley_elev.o", "rel":"implementation"}]
+}

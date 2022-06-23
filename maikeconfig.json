@@ -1,0 +1,144 @@
+{
+    "maikeconfig": {
+        "dir_compiler": {
+            "config": {},
+            "recipe": "make_directory.py",
+            "use_get_tags": 0
+        },
+        "source_file_info_loaders": {
+            "app": {
+                "compiler": {
+                    "config": {
+                        "cflags": [
+                            "-g"
+                        ],
+                        "std_revision":{"min":"c++20"}
+                    },
+                    "recipe": "cxx_linker.py",
+                    "use_get_tags": 0
+                },
+                "config": {},
+                "loader": "app"
+            },
+            "cxx": {
+                "compiler": {
+                    "config": {
+                        "cflags": [
+                            "-g",
+                            "-O3",
+                            "-ffast-math",
+                            "-ftree-vectorize",
+                            "-Wall",
+                            "-Wextra",
+                            "-Werror"
+                        ],
+                        "iquote": [
+                            "."
+                        ],
+                        "std_revision":{"min":"c++20"}
+                    },
+                    "recipe": "cxx_compiler.py",
+                    "use_get_tags": 0
+                },
+                "config": {
+                    "generated_includes": [
+                        ".*\\.gen\\.hpp$"
+                    ]
+                },
+                "loader": "cxx_src_loader"
+            },
+            "cxx_test": {
+                "compiler": {
+                    "config": {
+                        "actions": [
+                            "link",
+                            "run"
+                        ],
+                        "cflags": [
+                            "-g",
+                            "-Wall",
+                            "-Wextra",
+                            "-Werror"
+                        ],
+                        "iquote": [
+                            "."
+                        ],
+                        "std_revision":{
+                        "min":"c++20"
+                        }
+                    },
+                    "recipe": "cxx_compiler.py",
+                    "use_get_tags": 0
+                },
+                "config": {
+                    "generated_includes": [
+                        ".*\\.gen\\.hpp$"
+                    ]
+                },
+                "loader": "cxx_src_loader"
+            },
+            "extension": {
+                "compiler": {
+                    "config": {},
+                    "recipe": "",
+                    "use_get_tags": 0
+                },
+                "config": {},
+                "loader": "extension"
+            },
+            "identity": {
+                "compiler": {
+                    "config": {},
+                    "recipe": "copy_file.py",
+                    "use_get_tags": 0
+                },
+                "config": {
+                    "filename_ext_replacement_mode": "append",
+                    "target_filename_ext": ""
+                },
+                "loader": "generic"
+            },
+            "lib": {
+                "compiler": {
+                    "config": {},
+                    "recipe": "make_lib.py",
+                    "use_get_tags": 0
+                },
+                "config": {},
+                "loader": "lib"
+            },
+            "sass2css": {
+                "compiler": {
+                    "config": {},
+                    "recipe": "sass2css.py",
+                    "use_get_tags": 0
+                },
+                "config": {
+                    "filename_ext_replacement_mode": "replace",
+                    "target_filename_ext": ".css"
+                },
+                "loader": "generic"
+            }
+        },
+        "source_tree_loader": {
+            "file_info_loaders": {
+                ".app.maikerule": "app",
+                ".cpp": "cxx",
+                ".hpp": "cxx",
+                ".lib.maikerule": "lib",
+                ".py": "extension",
+                ".sass": "sass2css",
+                ".test.cpp": "cxx_test"
+            },
+            "fullpath_input_filter": [
+                "^\\.",
+                "^__"
+            ],
+            "input_filter": [
+                "^\\.",
+                "^__"
+            ],
+            "recursive": 0
+        }
+    }
+}

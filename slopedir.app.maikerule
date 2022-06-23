@@ -1,0 +1,4 @@
+{
+	"target":{"name":"slopedir"},
+	"dependencies":[{"ref":"./slopedir.o", "rel":"implementation"}]
+}

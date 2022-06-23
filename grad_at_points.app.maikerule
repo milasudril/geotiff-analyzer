@@ -1,0 +1,4 @@
+{
+	"target":{"name":"grad_at_points"},
+	"dependencies":[{"ref":"./grad_at_points.o", "rel":"implementation"}]
+}

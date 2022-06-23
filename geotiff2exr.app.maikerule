@@ -1,0 +1,4 @@
+{
+	"target":{"name":"geotiff2exr"},
+	"dependencies":[{"ref":"./geotiff2exr.o", "rel":"implementation"}]
+}
